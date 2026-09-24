@@ -26,7 +26,8 @@ const HotelForm = ({ initialData, onSubmit, isEdit }) => {
         imageUrl: initialData.image && !initialData.image.startsWith('/') ? initialData.image : ''
       });
       if (initialData.image) {
-        setPreview(initialData.image.startsWith('/') ? `https://stayora-89i1.onrender.com${initialData.image}` : initialData.image);
+        const baseUrl = import.meta.env.PROD ? 'https://stayora-89i1.onrender.com' : 'http://localhost:5000';
+        setPreview(initialData.image.startsWith('/') ? `${baseUrl}${initialData.image}` : initialData.image);
       }
     }
   }, [initialData]);

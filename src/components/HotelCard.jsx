@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const HotelCard = ({ hotel, onDelete }) => {
-  const backendBaseUrl = 'https://stayora-89i1.onrender.com';
+  const backendBaseUrl = import.meta.env.PROD ? 'https://stayora-89i1.onrender.com' : 'http://localhost:5000';
   const imgUrl = hotel.image ? (hotel.image.startsWith('/') ? `${backendBaseUrl}${hotel.image}` : hotel.image) : '';
 
   const descriptionSnippet = hotel.description?.length > 100 
@@ -21,6 +21,10 @@ const HotelCard = ({ hotel, onDelete }) => {
       <div className="hotel-details">
         <div className="hotel-title-group">
           <h3>{hotel.title}</h3>
+          <div className="hotel-location-pin">
+            <span className="pin-icon">📍</span>
+            <span className="coords">{Number(hotel.latitude).toFixed(2)}° N, {Number(hotel.longitude).toFixed(2)}° E</span>
+          </div>
         </div>
         
         <p className="hotel-description">{descriptionSnippet}</p>

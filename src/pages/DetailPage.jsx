@@ -62,7 +62,7 @@ const DetailPage = () => {
     );
   }
 
-  const backendBaseUrl = 'https://stayora-89i1.onrender.com';
+  const backendBaseUrl = import.meta.env.PROD ? 'https://stayora-89i1.onrender.com' : 'http://localhost:5000';
   const imgUrl = hotel.image ? (hotel.image.startsWith('/') ? `${backendBaseUrl}${hotel.image}` : hotel.image) : '';
   const position = [hotel.latitude, hotel.longitude];
 
