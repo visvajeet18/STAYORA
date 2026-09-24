@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const HotelCard = ({ hotel, onDelete }) => {
-  const backendBaseUrl = 'http://localhost:5000';
+  const backendBaseUrl = 'https://stayora-89i1.onrender.com';
   const imgUrl = hotel.image ? (hotel.image.startsWith('/') ? `${backendBaseUrl}${hotel.image}` : hotel.image) : '';
 
   const descriptionSnippet = hotel.description?.length > 100 

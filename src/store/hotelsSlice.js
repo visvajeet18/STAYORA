@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_BASE_URL = 'http://localhost:5000/api/hotels';
+const API_BASE_URL = 'https://stayora-89i1.onrender.com/api/hotels';
 
 export const fetchHotels = createAsyncThunk(
   'hotels/fetchHotels',
