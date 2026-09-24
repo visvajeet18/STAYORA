@@ -20,10 +20,10 @@ const FilterSidebar = ({ searchTerm, setSearchTerm, priceRange, setPriceRange, o
         <input 
           type="range" 
           min="0" 
-          max="100000" 
+          max="10000" 
           step="500"
-          value={priceRange.max || 100000} 
-          onChange={(e) => setPriceRange({ ...priceRange, max: e.target.value })}
+          value={priceRange.min || 0} 
+          onChange={(e) => setPriceRange({ ...priceRange, min: e.target.value })}
           style={{ width: '100%', margin: '15px 0' }}
         />
 
